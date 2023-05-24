@@ -13,7 +13,7 @@
 .PARAMETER RepoDir
 	Specifies the path to the Git repository
 .EXAMPLE
-	PS> ./pick-commit 93849f889 "Fix typo" "v1 v2 v3"
+	PS> ./push-repo 93849f889 "Fix typo" "v1 v2 v3"
 .LINK
 	https://github.com/fleschutz/PowerShell
 .NOTES
@@ -31,9 +31,9 @@ try {
 	
 	    $StopWatch = [system.diagnostics.stopwatch]::startNew()
 
-		"🍒 Add Files to ch $Branch ..."
-		& git add .
-		if ($lastExitCode -ne "0") { throw "'git checkout $Branch' failed" }
+		"🍒 Updating submodules..."
+		& git submodule update --init --recursive
+		if ($lastExitCode -ne "0") { throw "'git submodule update' failed" }
 
 		"🍒 Cleaning the repository from untracked files..."
 		& git clean -fdx -f
@@ -46,10 +46,9 @@ try {
 		& git pull --recurse-submodules 
 		if ($lastExitCode -ne "0") { throw "'git pull' failed" }
 
-		"🍒 Checking the status..."
-		$Result = (git status)
-		if ($lastExitCode -ne "0") { throw "'git status' failed" }
-		if ("$Result" -notmatch "nothing to commit, working tree clean") { throw "Branch is NOT clean: $Result" }
+		"🍒 Add Files to commit..."
+		& git add .
+		if ($lastExitCode -ne "0") { throw "'git checkout $Branch' failed" }
 
 		"🍒 Committing..."
 		& git commit -m "$CommitMessage"
