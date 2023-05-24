@@ -19,8 +19,12 @@ function TryLaunching { param($Path)
 }
 
 try {
+	
+	TryLaunching "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe"
+	TryLaunching "C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.exe"
 	TryLaunching "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe"
 	TryLaunching "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe"
+
 	exit 0 # success
 } catch {
 	"⚠️ Error in line $($_.InvocationInfo.ScriptLineNumber): $($Error[0])"
