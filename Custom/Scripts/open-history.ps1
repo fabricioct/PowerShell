@@ -3,8 +3,8 @@
 #>
 
 try {
-	
-	Start-Process notepad++.exe
+
+	& Start-Process notepad (Get-PSReadlineOption).HistorySavePath;
 	
 	exit 0 # success
 } catch {
