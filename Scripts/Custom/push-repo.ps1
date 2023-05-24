@@ -24,31 +24,16 @@ param([string]$CommitMessage = "", [string]$RepoDir = "$PWD")
 
 try {
 	
-	if (-not(Test-Path "$RepoDir" -pathType container)) { throw "Can't access directory: $RepoDir" }
-	Set-Location "$RepoDir"
+		if (-not(Test-Path "$RepoDir" -pathType container)) { throw "Can't access directory: $RepoDir" }
+		Set-Location "$RepoDir"
 
-	if ($CommitMessage -eq "") { $CommitMessage = read-host "Enter the commit message to use" }
+	    if ($CommitMessage -eq "") { $CommitMessage = read-host "Enter the commit message to use" }
 	
 	    $StopWatch = [system.diagnostics.stopwatch]::startNew()
-
-		"🍒 Updating submodules..."
-		& git submodule update --init --recursive
-		if ($lastExitCode -ne "0") { throw "'git submodule update' failed" }
-
-		"🍒 Cleaning the repository from untracked files..."
-		& git clean -fdx -f
-		if ($lastExitCode -ne "0") { throw "'git clean -fdx -f' failed" }
-			
-		& git submodule foreach --recursive git clean -fdx -f
-		if ($lastExitCode -ne "0") { throw "'git clean -fdx -f' in submodules failed" }
-
-		"🍒 Pulling latest updates..."
-		& git pull --recurse-submodules 
-		if ($lastExitCode -ne "0") { throw "'git pull' failed" }
-
+	
 		"🍒 Add Files to commit..."
 		& git add .
-		if ($lastExitCode -ne "0") { throw "'git checkout $Branch' failed" }
+		if ($lastExitCode -ne "0") { throw "'git add files ' failed" }
 
 		"🍒 Committing..."
 		& git commit -m "$CommitMessage"
