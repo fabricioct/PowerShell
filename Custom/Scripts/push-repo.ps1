@@ -13,15 +13,15 @@ try {
 	
 	    $StopWatch = [system.diagnostics.stopwatch]::startNew()
 	
-		"🍒 Add Files to commit..."
+		"⏳ Add Files to commit..."
 		& git add .
 		if ($lastExitCode -ne "0") { throw "'git add files ' failed" }
 
-		"🍒 Committing..."
+		"⏳ Committing..."
 		& git commit -m "$CommitMessage"
 		if ($lastExitCode -ne "0") { throw "'git commit' failed" }
 
-		"🍒 Pushing..."
+		"⏳ Pushing..."
 		& git push		
 		if ($lastExitCode -ne "0") { throw "'git push' failed" }
 	
