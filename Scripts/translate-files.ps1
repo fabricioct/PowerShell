@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-	Translates text files into any supported language
+	Translates text files
 .DESCRIPTION
 	This PowerShell script translates text files into any supported language.
 .PARAMETER FilePattern
@@ -16,17 +16,18 @@
 param([string]$FilePattern = "")
 
 function DetectSourceLang { param([string]$Filename)
-	if ("$Filename" -like "*Deutsch*") { return "de" }
-	if ("$Filename" -like "*English*") { return "en" }
+	if ("$Filename" -like "*Deutsch*")  { return "de" }
+	if ("$Filename" -like "*English*")  { return "en" }
 	if ("$Filename" -like "*Français*") { return "fr" }
 	return "unknown"
 }
 
 function TranslateFilename { param([string]$Filename, [string]$SourceLang, [string]$TargetLang)
+	[string]$SourceLanguage = ""
 	if ($SourceLang -eq "de") { $SourceLanguage = "Deutsch" }
 	if ($SourceLang -eq "en") { $SourceLanguage = "English" }
 	if ($SourceLang -eq "fr") { $SourceLanguage = "Français" }
-	$TargetLanguage = ("$PSScriptRoot/translate-text.ps1" $SourceLanguage $SourceLang $TargetLang)
+	$TargetLanguage = ("$PSScriptRoot/translate-text.ps1 $SourceLanguage $SourceLang $TargetLang")
 	return $Filename.replace($SourceLanguage, $TargetLanguage)
 }
 
