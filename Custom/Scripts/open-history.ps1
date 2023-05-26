@@ -4,7 +4,7 @@
 
 try {
 
-	& Start-Process notepad (Get-PSReadlineOption).HistorySavePath;
+	& Invoke-Item (Get-PSReadlineOption).HistorySavePath;
 	
 	exit 0 # success
 } catch {
