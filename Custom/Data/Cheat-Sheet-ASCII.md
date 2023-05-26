@@ -1,3 +1,5 @@
+# Atalhos
+
 ## Tabela ASCII
 
 Combinar com ALT + Número:

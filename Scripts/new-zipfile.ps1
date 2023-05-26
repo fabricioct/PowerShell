@@ -20,7 +20,7 @@ try {
 	$StopWatch = [system.diagnostics.stopwatch]::startNew()
 
 	$folder = resolve-path $folder
-	compress-archive -path $folder -destinationPath $folder.zip
+	compress-archive -path $folder -destinationPath "$folder.zip"
 
 	[int]$Elapsed = $StopWatch.Elapsed.TotalSeconds
 	"✔️ created zip file $($folder).zip in $Elapsed sec"
