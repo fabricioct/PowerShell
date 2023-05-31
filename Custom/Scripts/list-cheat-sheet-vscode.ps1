@@ -10,7 +10,6 @@ try {
 		exit 0 # success
 	}
 	
-	
 	& Show-Markdown -Path "$PSScriptRoot/../Data/Cheat-Sheet-vs-code.md"
 
 	exit 0 # success
