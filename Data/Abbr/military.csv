@@ -393,9 +393,6 @@ JTB,Joint Transportation Board
 JTF,Joint Task Force
 JTIDS,Joint Tactical Information Distribution System
 JVSG,Jobs for Veterans State Grant
-KCAS,Calibrated AirSpeed (in Knots)
-KIAS,Knots Indicated AirSpeed
-KTAS,True AirSpeed in Knots
 LA,Lead Agent
 LABS,Low Altitude Bombing System
 LAD,Latest Arrival Date
@@ -660,7 +657,6 @@ SAC,Strategic Air Command
 SAFE kit,Sexual Assault Forensic Examination Kit
 SAM,Surface-to-Air Missile
 SAP,Special Access Program
-SAR,Search And Rescue
 SAR,Search and Rescue
 SAS,Special Air Service
 SBA,Small Business Administration
@@ -751,16 +747,11 @@ TSP,Thrift Savings Plan
 TSSAM,Tri-Service Stand-off Attack Missile
 TTT,Time to Target
 TU,Task Unit
-UA,Unmanned Aircraft
-UAS,Unmanned Aircraft System
-UAV,Unmanned Aerial Vehicle
-UCAV,Unmanned Combat Aerial Vehicle
 UCMJ,Uniform Code of Military Justice
 UCP,Unified Command Plan
 UCX,Unemployment Compensation for Ex-Servicemembers
 UDT,Underwater Demolition Team
 UETF,Unified Exchange Task Force
-UHF,Ultra-High Fequency (300MHz to 3 GHz)
 UIC,Unit Identification Code
 UJTL,Universal Joint Task List
 ULN,Unit Line Number
@@ -786,7 +777,6 @@ VANF,VA National Formulary
 VBIED,Vehicle-Borne Improvised Explosive Device
 VDU,Visual Display Unit
 VHA,Veterans Health Administration
-VHF,Very High Frequency (3 to 300MHz)
 VI,visual information
 VISA,Voluntary Intermodal Sealift Agreement
 VISN,Veterans Integrated Service Network
@@ -795,7 +785,6 @@ VSEL,Vickers Shipbuilding and Engineering LTD
 VSO,Veterans Service Organization
 VSTOL,Vertical Short Take-Off and Landing
 VTAS,"Voice, Throttle and Stick"
-VTOL,Vertical Take-Off and Landing
 WARM,Wartime Reserve Modes
 WARNORD,Warning Order
 WEZ,Weapon Engagement Zone
