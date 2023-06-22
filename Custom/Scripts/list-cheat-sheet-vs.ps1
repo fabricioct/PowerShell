@@ -11,6 +11,7 @@ try {
 		exit 0 # success
 	}
 	
+	& Write-Host "`r"
 	& Show-Markdown -Path "$PSScriptRoot/../Data/Cheat-Sheet-vs.md"
 
 	exit 0 # success

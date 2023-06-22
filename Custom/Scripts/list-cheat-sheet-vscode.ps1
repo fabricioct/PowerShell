@@ -9,7 +9,8 @@ try {
 		& Invoke-Item  "$PSScriptRoot/../Data/Cheat-Sheet-vs-code.md"
 		exit 0 # success
 	}
-	
+
+        & Write-Host "`r"	
 	& Show-Markdown -Path "$PSScriptRoot/../Data/Cheat-Sheet-vs-code.md"
 
 	exit 0 # success

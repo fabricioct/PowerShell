@@ -12,6 +12,7 @@ try {
 		exit 0 # success
 	}
 	
+	& Write-Host "`r"
 	& Show-Markdown -Path "$PSScriptRoot/../Data/Cheat-Sheet-React.md"
 
 	exit 0 # success
